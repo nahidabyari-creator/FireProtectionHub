@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fire Protection Hub — Oman National Fire Safety Platform</title>
+
+<meta name="description" content="A centralised, government-supervised platform connecting building owners, contractors, and certified fire safety companies.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPO-NAME/">
+<meta property="og:title" content="Fire Protection Hub | Oman National Fire Safety Platform">
+<meta property="og:description" content="A centralised, government-supervised platform connecting building owners, contractors, and certified fire safety companies.">
+<meta property="og:image" content="https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPO-NAME/preview.jpg">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPO-NAME/preview.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ... your existing CSS ... */
+:root {
+  --navy:      #0B1F3A;
+  --navy-2:    #122847;
+  --navy-3:    #1A3560;
+  --red:       #C0282C;
+  --red-lt:    #D93B3F;
+  --amber:     #C07C2A;
+  --amber-lt:  #E09A45;
+  --green:     #217A4B;
+  --green-lt:  #2AAE6A;
+  --slate:     #3D5166;
+  --mist:      #7A92A8;
+  --border:    #D4DCE6;
+  --border-lt: #EBF0F5;
+  --pearl:     #F2F5F8;
+  --white:     #FFFFFF;
+  --text:      #18283A;
+  --soft:      #4D6375;
+  --r:         6px;
+  --r2:        10px;
+  --sh1:       0 1px 4px rgba(11,31,58,.07);
+  --sh2:       0 4px 20px rgba(11,31,58,.11);
+  --sh3:       0 12px 48px rgba(11,31,58,.17);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--pearl);color:var(--text);font-family:'Nunito Sans',sans-serif;font-size:14.5px;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.2}
+
+/* ── GOV BAR ── */
+.govbar{background:var(--navy);border-bottom:2px solid var(--amber);padding:7px 52px;display:flex;justify-content:space-between;align-items:center}
+.gb-l{display:flex;align-items:center;gap:12px;font-size:.71rem;color:rgba(255,255,255,.55);letter-spacing:.4px}
+.gb-emblem{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(192,124,42,.5);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--amber-lt)}
+.gb-r{display:flex;gap:16px;font-size:.7rem}
+.gb-r a{color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.gb-r a:hover{color:var(--amber-lt)}
+
+/* ── HEADER ── */
+header{background:var(--white);border-bottom:1px solid var(--border);box-shadow:var(--sh1);position:sticky;top:0;z-index:200}
+.hdr{max-width:1300px;margin:0 auto;padding:0 52px;display:flex;align-items:center;height:68px;gap:36px}
+.logo{display:flex;align-items:center;gap:11px;cursor:pointer;flex-shrink:0}
+.logo-mark{width:38px;height:42px;background:var(--navy);clip-path:polygon(50% 0%,100% 15%,100% 62%,50% 100%,0% 62%,0% 15%);display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
+.logo-mark::after{content:'🔥';position:absolute;font-size:.9rem}
+.logo-title{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.28rem;color:var(--navy);line-height:1}
+.logo-sub{font-size:.6rem;color:var(--mist);letter-spacing:1.8px;text-transform:uppercase;font-weight:600;margin-top:3px}
+nav.mn{display:flex;align-items:center;gap:2px;flex:1}
+.ni{padding:8px 15px;font-size:.83rem;font-weight:600;color:var(--soft);cursor:pointer;border:none;background:none;border-radius:var(--r);font-family:'Nunito Sans',sans-serif;transition:all .18s;white-space:nowrap;position:relative}
+.ni::after{content:'';position:absolute;bottom:-1px;left:15px;right:15px;height:2px;background:var(--red);transform:scaleX(0);transition:transform .2s}
+.ni:hover{color:var(--navy);background:var(--pearl)}
+.ni:hover::after,.ni.active::after{transform:scaleX(1)}
+.ni.active{color:var(--navy);font-weight:700}
+.hdr-acts{display:flex;gap:8px;flex-shrink:0}
+
+/* ── BUTTONS ── */
+.btn{padding:9px 20px;border-radius:var(--r);font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:.8rem;cursor:pointer;border:none;transition:all .18s;letter-spacing:.2px;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.btn-ghost{background:transparent;border:1.5px solid var(--border);color:var(--soft)}
+.btn-ghost:hover{border-color:var(--navy);color:var(--navy)}
+.btn-primary{background:var(--red);color:#fff;box-shadow:0 2px 8px rgba(192,40,44,.22)}
+.btn-primary:hover{background:var(--red-lt);box-shadow:0 4px 14px rgba(192,40,44,.3)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-2)}
+.btn-amber{background:var(--amber);color:#fff}
+.btn-amber:hover{background:var(--amber-lt)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-lt)}
+.btn-outline{background:transparent;border:1.5px solid var(--navy);color:var(--navy)}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.btn-outline-w{background:transparent;border:1.5px solid rgba(255,255,255,.3);color:#fff}
+.btn-outline-w:hover{background:rgba(255,255,255,.1)}
+.btn-lg{padding:13px 28px;font-size:.88rem;border-radius:var(--r2)}
+.btn-sm{padding:5px 12px;font-size:.74rem}
+.btn-full{width:100%;justify-content:center;padding:12px}
+
+/* ── PAGE SYSTEM ── */
+.page{display:none;animation:fadeIn .22s ease}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── PAGE STRIPE ── */
+.pstripe{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);padding:34px 52px;border-bottom:2px solid var(--amber)}
+.pstripe-inner{max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.pbc{font-size:.7rem;color:rgba(255,255,255,.4);margin-bottom:7px;letter-spacing:.3px}
+.pbc span{color:rgba(255,255,255,.65)}
+.pstripe h2{font-size:1.9rem;font-weight:700;color:#fff}
+.pstripe p{color:rgba(255,255,255,.52);font-size:.88rem;margin-top:5px;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.05rem}
+
+/* ══ HOME PAGE ══ */
+.hero{background:var(--navy);padding:76px 52px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(192,40,44,.12) 0%,transparent 55%),repeating-linear-gradient(90deg,transparent,transparent 80px,rgba(255,255,255,.015) 80px,rgba(255,255,255,.015) 81px),repeating-linear-gradient(0deg,transparent,transparent 80px,rgba(255,255,255,.015) 80px,rgba(255,255,255,.015) 81px)}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(192,124,42,.07) 0%,transparent 70%)}
+.hero-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;position:relative;z-index:1}
+.h-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(192,124,42,.4);color:var(--amber-lt);padding:5px 14px;border-radius:100px;font-size:.7rem;letter-spacing:1.3px;text-transform:uppercase;font-weight:700;margin-bottom:20px;width:fit-content}
+.h-dot{width:6px;height:6px;background:var(--amber-lt);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(2.4rem,4vw,3.8rem);font-weight:700;color:#fff;letter-spacing:-.5px;margin-bottom:18px;line-height:1.12}
+.hero h1 em{font-style:normal;color:var(--amber-lt)}
+.hero-desc{font-family:'Cormorant Garamond',serif;font-size:1.12rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:530px;margin-bottom:32px;font-weight:400}
+.hero-acts{display:flex;gap:10px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:32px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1)}
+.hs{}.hs-n{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:#fff;line-height:1}.hs-n em{font-style:normal;color:var(--amber-lt)}
+.hs-l{font-size:.7rem;color:rgba(255,255,255,.42);margin-top:3px;letter-spacing:.3px;text-transform:uppercase}
+
+/* Feature cards on hero right */
+.hero-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:var(--r2);padding:24px;backdrop-filter:blur(8px)}
+.hp-title{font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--amber-lt);margin-bottom:16px}
+.feat-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.feat-item:last-child{border-bottom:none}
+.feat-icon{width:34px;height:34px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.fi-r{background:rgba(192,40,44,.18)}
+.fi-a{background:rgba(192,124,42,.15)}
+.fi-g{background:rgba(33,122,75,.15)}
+.fi-b{background:rgba(11,31,58,.15)}
+.feat-txt{}.feat-name{font-size:.83rem;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:2px}
+.feat-desc{font-size:.72rem;color:rgba(255,255,255,.42);line-height:1.4}
+
+/* ── SECTION ── */
+.sw{max-width:1300px;margin:0 auto;padding:68px 52px}
+.eyebrow{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.eline{width:24px;height:2px;background:var(--red)}
+.etxt{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--red)}
+.stitle{font-size:clamp(1.8rem,2.8vw,2.6rem);font-weight:700;color:var(--navy);letter-spacing:-.4px;margin-bottom:10px}
+.sdesc{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--soft);line-height:1.8;max-width:520px;font-weight:400}
+
+/* Process */
+.proc-bg{background:var(--white);border-top:1px solid var(--border-lt);border-bottom:1px solid var(--border-lt)}
+.proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;margin-top:44px}
+.pc{background:var(--white);padding:32px 28px;transition:background .2s;position:relative}
+.pc:hover{background:var(--pearl)}
+.pc-n{font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:2px;color:var(--mist);font-weight:600;margin-bottom:14px}
+.pc-icon{width:44px;height:44px;background:rgba(11,31,58,.07);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:16px}
+.pc h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:8px;font-family:'Nunito Sans',sans-serif}
+.pc p{font-size:.84rem;color:var(--soft);line-height:1.7}
+
+/* Audience */
+.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.ac{border-radius:var(--r2);padding:38px;border:1px solid var(--border)}
+.ac-dark{background:var(--navy)}.ac-light{background:var(--white)}
+.atag{display:inline-block;padding:4px 12px;border-radius:100px;font-size:.7rem;letter-spacing:.5px;font-weight:700;margin-bottom:16px;text-transform:uppercase}
+.at-a{background:rgba(192,124,42,.18);color:var(--amber-lt)}
+.at-n{background:rgba(11,31,58,.08);color:var(--navy)}
+.ac h3{font-size:1.4rem;font-weight:700;margin-bottom:10px}
+.ac-dark h3{color:#fff}.ac-light h3{color:var(--navy)}
+.ac p{font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.75;margin-bottom:20px;font-weight:400}
+.ac-dark p{color:rgba(255,255,255,.55)}.ac-light p{color:var(--soft)}
+.fl{list-style:none;display:flex;flex-direction:column;gap:8px}
+.fl li{display:flex;align-items:flex-start;gap:9px;font-size:.84rem}
+.ac-dark .fl li{color:rgba(255,255,255,.72)}.ac-light .fl li{color:var(--soft)}
+.fck{width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;flex-shrink:0;margin-top:1px;font-weight:800}
+.ac-dark .fck{background:rgba(192,124,42,.2);color:var(--amber-lt)}
+.ac-light .fck{background:rgba(11,31,58,.08);color:var(--navy)}
+
+/* ══ COMPANIES PAGE ══ */
+.fsec{background:var(--white);border-bottom:1px solid var(--border)}
+.fin{max-width:1300px;margin:0 auto;padding:14px 52px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.sinput{background:var(--pearl);border:1.5px solid var(--border);color:var(--text);padding:9px 13px;border-radius:var(--r);font-family:'Nunito Sans',sans-serif;font-size:.83rem;width:240px;outline:none;transition:border .2s}
+.sinput:focus{border-color:var(--navy)}
+.sinput::placeholder{color:var(--mist)}
+.fsel{background:var(--pearl);border:1.5px solid var(--border);color:var(--soft);padding:9px 12px;border-radius:var(--r);font-family:'Nunito Sans',sans-serif;font-size:.81rem;outline:none;cursor:pointer}
+.fchip{padding:7px 14px;border-radius:100px;font-size:.77rem;cursor:pointer;border:1.5px solid var(--border);background:transparent;color:var(--soft);font-family:'Nunito Sans',sans-serif;transition:all .18s;font-weight:600}
+.fchip:hover,.fchip.on{border-color:var(--navy);background:var(--navy);color:#fff}
+.cw{max-width:1300px;margin:0 auto;padding:28px 52px}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ccard{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:22px;cursor:pointer;transition:all .2s;position:relative}
+.ccard:hover{border-color:var(--navy-3);box-shadow:var(--sh2);transform:translateY(-2px)}
+.cch{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.cav{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1rem;color:#fff;flex-shrink:0}
+.cpill{display:flex;align-items:center;gap:4px;background:rgba(33,122,75,.1);border:1px solid rgba(33,122,75,.25);color:var(--green);padding:3px 9px;border-radius:100px;font-size:.67rem;font-weight:700;letter-spacing:.3px}
+.cname{font-weight:700;font-size:.96rem;color:var(--navy);margin-bottom:2px}
+.cloc{font-size:.76rem;color:var(--mist);margin-bottom:10px}
+.ctags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.ctag{padding:2px 8px;border-radius:4px;font-size:.69rem;background:var(--pearl);color:var(--soft);border:1px solid var(--border-lt)}
+.cfoot{display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--border-lt)}
+.crat{font-size:.79rem;color:var(--amber)}
+.csz{font-size:.72rem;color:var(--mist);background:var(--pearl);padding:2px 8px;border-radius:4px}
+
+/* ══ TENDERS PAGE ══ */
+.tlayout{max-width:1300px;margin:0 auto;padding:28px 52px;display:grid;grid-template-columns:1fr 310px;gap:22px;align-items:flex-start}
+.tlist{display:flex;flex-direction:column;gap:11px}
+.tcard{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:22px 26px;cursor:pointer;transition:all .2s;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+.tcard:hover{border-color:var(--navy-3);box-shadow:var(--sh2)}
+.tcard.hot{border-left:4px solid var(--red);border-color:var(--red)}
+.ttop{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.ttype{padding:2px 9px;border-radius:4px;font-size:.69rem;font-weight:700;background:rgba(11,31,58,.07);color:var(--navy);letter-spacing:.2px}
+.turgent{padding:2px 9px;border-radius:4px;font-size:.69rem;font-weight:700;background:rgba(192,40,44,.1);color:var(--red)}
+.ttitle{font-weight:700;font-size:.96rem;color:var(--navy);margin-bottom:4px}
+.tmeta{font-size:.76rem;color:var(--mist)}
+.tr{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.tbudget{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.25rem;color:var(--navy)}
+.tdead{font-size:.73rem;color:var(--mist)}
+.tbids{font-size:.73rem;color:var(--red);font-weight:600}
+.tsc{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:22px;margin-bottom:14px}
+.tsc h4{font-size:.72rem;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;color:var(--mist);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border-lt)}
+.scrow{display:flex;gap:10px;margin-bottom:10px}
+.scstat{flex:1;text-align:center;padding:12px 6px;background:var(--pearl);border-radius:var(--r)}
+.scv{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--navy)}
+.scl{font-size:.67rem;color:var(--mist);margin-top:2px;text-transform:uppercase;letter-spacing:.3px}
+
+/* ══ CONTRACTS PAGE ══ */
+.contract-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.cf-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:24px;text-align:center;position:relative}
+.cf-card::after{content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--mist);font-size:1.2rem;z-index:10}
+.cf-card:last-child::after{display:none}
+.cf-num{width:36px;height:36px;background:var(--navy);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;margin:0 auto 14px}
+.cf-icon{font-size:1.8rem;margin-bottom:12px}
+.cf-card h3{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px;font-family:'Nunito Sans',sans-serif}
+.cf-card p{font-size:.8rem;color:var(--soft);line-height:1.6}
+
+/* Contract list */
+.contract-list{display:flex;flex-direction:column;gap:10px;margin-top:32px}
+.contract-row{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:18px 22px;display:grid;grid-template-columns:1fr auto auto;gap:20px;align-items:center}
+.cr-title{font-weight:700;font-size:.92rem;color:var(--navy);margin-bottom:3px}
+.cr-meta{font-size:.75rem;color:var(--mist)}
+.cr-stage{font-size:.75rem;font-weight:700}
+.sp{padding:3px 10px;border-radius:100px;font-size:.69rem;font-weight:700;letter-spacing:.2px}
+.sp-active{background:rgba(33,122,75,.1);color:var(--green)}
+.sp-pending{background:rgba(192,124,42,.1);color:var(--amber)}
+.sp-review{background:rgba(11,31,58,.08);color:var(--navy)}
+.sp-expired{background:rgba(192,40,44,.1);color:var(--red)}
+
+/* ══ JCR PAGE ══ */
+.jcr-layout{max-width:1300px;margin:0 auto;padding:32px 52px;display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:flex-start}
+.jcr-form-panel{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:32px}
+.jcr-form-panel h3{font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.jcr-sub{font-size:.86rem;color:var(--soft);margin-bottom:28px;line-height:1.6}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:13px}
+.fg label{font-size:.76rem;font-weight:600;color:var(--soft);letter-spacing:.2px}
+.fi{background:var(--pearl);border:1.5px solid var(--border);color:var(--text);padding:9px 13px;border-radius:var(--r);font-family:'Nunito Sans',sans-serif;font-size:.85rem;outline:none;transition:border .2s;width:100%}
+.fi:focus{border-color:var(--navy);background:#fff}
+.fi::placeholder{color:var(--mist)}
+.checklist{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.chk-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--pearl);border:1px solid var(--border-lt);border-radius:var(--r);font-size:.84rem;cursor:pointer;transition:background .2s}
+.chk-item:hover{background:var(--border-lt)}
+.chk-item input[type=checkbox]{accent-color:var(--navy);width:15px;height:15px}
+.chk-item.checked{background:rgba(33,122,75,.07);border-color:rgba(33,122,75,.2)}
+.sig-box{border:2px dashed var(--border);border-radius:var(--r2);padding:28px;text-align:center;color:var(--mist);font-size:.84rem;cursor:pointer;transition:all .2s;margin-bottom:14px;min-height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.sig-box:hover{border-color:var(--navy);color:var(--soft)}
+.sig-box.signed{background:rgba(33,122,75,.06);border-color:rgba(33,122,75,.3);color:var(--green)}
+.jcr-sc{display:flex;flex-direction:column;gap:14px}
+.jcr-sc-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:20px}
+.jcr-sc-card h4{font-size:.72rem;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;color:var(--mist);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-lt)}
+.jcr-item{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border-lt);font-size:.83rem}
+.jcr-item:last-child{border-bottom:none}
+.ji-name{color:var(--text);font-weight:500}
+.ji-date{font-size:.73rem;color:var(--mist)}
+
+/* ══ INVOICES PAGE ══ */
+.inv-layout{max-width:1300px;margin:0 auto;padding:32px 52px}
+.inv-list{display:flex;flex-direction:column;gap:10px;margin-top:28px}
+.inv-row{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:16px 22px;display:grid;grid-template-columns:60px 1fr auto auto auto;gap:18px;align-items:center}
+.inv-id{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1rem;color:var(--navy)}
+.inv-name{font-weight:600;font-size:.9rem;color:var(--navy);margin-bottom:2px}
+.inv-meta{font-size:.74rem;color:var(--mist)}
+.inv-amount{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.15rem;color:var(--navy);white-space:nowrap}
+.inv-date{font-size:.76rem;color:var(--mist);white-space:nowrap}
+
+/* ══ NOTIFICATIONS / REMINDERS ══ */
+.notif-demo{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:24px;max-width:580px}
+.nd-title{font-size:.72rem;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;color:var(--mist);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.nd-badge{background:var(--red);color:#fff;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:10px;letter-spacing:0;text-transform:none}
+.nitem{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border-lt)}
+.nitem:last-child{border-bottom:none}
+.nibox{width:36px;height:36px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:.88rem;flex-shrink:0}
+.ni-r{background:rgba(192,40,44,.1)}.ni-a{background:rgba(192,124,42,.12)}.ni-g{background:rgba(33,122,75,.1)}.ni-b{background:rgba(11,31,58,.07)}
+.nm{font-size:.82rem;color:var(--text);line-height:1.5;margin-bottom:3px}
+.nt{font-size:.71rem;color:var(--mist)}
+.ntype-tag{display:inline-block;padding:1px 7px;border-radius:4px;font-size:.66rem;font-weight:700;margin-right:4px}
+.nt-lic{background:rgba(192,40,44,.1);color:var(--red)}
+.nt-ins{background:rgba(192,124,42,.1);color:var(--amber)}
+.nt-jcr{background:rgba(11,31,58,.07);color:var(--navy)}
+.nt-tnd{background:rgba(33,122,75,.1);color:var(--green)}
+
+/* ══ PRICING PAGE ══ */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.pcard{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:28px 24px;position:relative;transition:all .2s}
+.pcard:hover:not(.pfeat){border-color:var(--navy-3);box-shadow:var(--sh2)}
+.pfeat{background:var(--navy);border-color:var(--navy);box-shadow:var(--sh3)}
+.psize{display:inline-block;font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+.pcard:not(.pfeat) .psize{color:var(--mist)}
+.pfeat .psize{color:var(--amber-lt)}
+.pamt{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;line-height:1;margin-bottom:3px}
+.pcard:not(.pfeat) .pamt{color:var(--navy)}.pfeat .pamt{color:#fff}
+.pperiod{font-size:.78rem;margin-bottom:20px}
+.pcard:not(.pfeat) .pperiod{color:var(--mist)}.pfeat .pperiod{color:rgba(255,255,255,.45)}
+.pdiv{height:1px;margin-bottom:20px}
+.pcard:not(.pfeat) .pdiv{background:var(--border-lt)}.pfeat .pdiv{background:rgba(255,255,255,.1)}
+.pfeats{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
+.pfeats li{display:flex;align-items:flex-start;gap:8px;font-size:.82rem}
+.pfeats li.off{opacity:.3}
+.pcard:not(.pfeat) .pfeats li{color:var(--soft)}.pfeat .pfeats li{color:rgba(255,255,255,.82)}
+.pck{font-size:.74rem;margin-top:1px;flex-shrink:0}
+.pcard:not(.pfeat) .pck{color:var(--green)}.pfeat .pck{color:var(--amber-lt)}
+.pop-tag{position:absolute;top:16px;right:16px;background:var(--amber);color:#fff;font-size:.67rem;font-weight:700;padding:2px 9px;border-radius:100px;letter-spacing:.3px}
+.pnote{background:rgba(11,31,58,.04);border:1px solid rgba(11,31,58,.09);border-left:3px solid var(--navy);border-radius:var(--r);padding:11px 15px;font-size:.82rem;color:var(--soft);line-height:1.6;margin-top:4px}
+.fee-row{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:24px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:20px}
+
+/* ══ REGISTRATION ══ */
+.rw{max-width:720px;margin:0 auto;padding:44px 52px}
+.rsteps{display:flex;align-items:center;margin-bottom:36px}
+.rss{display:flex;align-items:center;gap:8px;flex:1}
+.rsn{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;flex-shrink:0;transition:all .3s}
+.rsn.done{background:#27AE60;color:#fff}.rsn.act{background:var(--navy);color:#fff}.rsn.pend{background:var(--pearl);color:var(--mist);border:1.5px solid var(--border)}
+.rsl{font-size:.77rem;font-weight:600}
+.rsl.done{color:#27AE60}.rsl.act{color:var(--navy)}.rsl.pend{color:var(--mist)}
+.rsline{flex:1;height:1px;background:var(--border);margin:0 6px}
+.rpanel{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:36px;box-shadow:var(--sh1)}
+.rpanel h3{font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:5px}
+.rsub{font-size:.86rem;color:var(--soft);margin-bottom:24px;line-height:1.6}
+.type-opts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.topt{border:2px solid var(--border);border-radius:var(--r2);padding:20px;cursor:pointer;transition:all .2s;text-align:center}
+.topt:hover{border-color:var(--navy-3)}.topt.sel{border-color:var(--navy);background:rgba(11,31,58,.04)}
+.to-ico{font-size:1.8rem;margin-bottom:10px}
+.to-name{font-weight:700;font-size:.92rem;color:var(--navy);margin-bottom:4px}
+.to-desc{font-size:.78rem;color:var(--soft);line-height:1.4}
+.size-opts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.sopt{border:2px solid var(--border);border-radius:var(--r);padding:14px 10px;cursor:pointer;transition:all .2s;text-align:center}
+.sopt:hover{border-color:var(--navy-3)}.sopt.sel{border-color:var(--navy);background:rgba(11,31,58,.04)}
+.so-name{font-weight:700;font-size:.85rem;color:var(--navy);margin-bottom:3px}
+.so-price{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.2rem;color:var(--red)}
+.so-emp{font-size:.68rem;color:var(--mist)}
+.factions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px;padding-top:18px;border-top:1px solid var(--border-lt)}
+.infobox{background:rgba(11,31,58,.04);border:1px solid rgba(11,31,58,.09);border-left:3px solid var(--navy);border-radius:var(--r);padding:11px 15px;font-size:.82rem;color:var(--soft);margin-bottom:18px;line-height:1.6}
+.psum{background:var(--pearl);border:1px solid var(--border);border-radius:var(--r2);padding:18px;margin-bottom:16px}
+.psr{display:flex;justify-content:space-between;padding:6px 0;font-size:.85rem;border-bottom:1px solid var(--border-lt)}
+.psr:last-child{border-bottom:none;margin-top:4px;padding-top:10px;font-weight:700;font-size:.92rem;color:var(--navy)}
+.psl{color:var(--soft)}.psv{color:var(--navy);font-weight:500}
+.ubox{border:2px dashed var(--border);border-radius:var(--r2);padding:24px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:12px;background:var(--pearl)}
+.ubox:hover{border-color:var(--navy);background:#fff}
+.ubox p{font-size:.83rem;color:var(--soft);margin-top:6px}
+.ubox span{font-size:.73rem;color:var(--mist)}
+
+/* ══ DASHBOARD ══ */
+#page-dashboard{min-height:calc(100vh - 109px);background:var(--pearl)}
+.dlayout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 109px)}
+.dsb{background:var(--navy);padding:0;position:sticky;top:109px;height:calc(100vh - 109px);overflow-y:auto;display:flex;flex-direction:column}
+.dsb-co{padding:20px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.dsb-av{width:40px;height:40px;background:var(--red);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;color:#fff;font-size:.98rem;margin-bottom:9px}
+.dsb-name{font-weight:700;font-size:.85rem;color:#fff;margin-bottom:2px}
+.dsb-plan{font-size:.68rem;color:var(--amber-lt);letter-spacing:.4px}
+.dsb-nav{padding:14px 10px;flex:1}
+.dsb-sec{font-size:.63rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.28);padding:0 8px;margin:14px 0 5px;font-weight:700}
+.dsb-ni{display:flex;align-items:center;gap:9px;padding:8px 8px;border-radius:var(--r);font-size:.8rem;color:rgba(255,255,255,.52);cursor:pointer;transition:all .2s;margin-bottom:1px}
+.dsb-ni:hover{background:rgba(255,255,255,.06);color:rgba(255,255,255,.82)}
+.dsb-ni.act{background:rgba(255,255,255,.1);color:#fff}
+.dsb-ni .ico{width:16px;text-align:center;font-size:.86rem}
+.nc{margin-left:auto;background:var(--red);color:#fff;font-size:.63rem;font-weight:700;padding:1px 6px;border-radius:10px}
+.dmain{padding:28px}
+.dtopbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.dtopbar h2{font-size:1.45rem;font-weight:700;color:var(--navy)}
+.ddate{font-size:.8rem;color:var(--mist);margin-top:2px}
+.kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:20px}
+.kc{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:18px 20px}
+.kico{width:34px;height:34px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:.9rem;margin-bottom:12px}
+.ki-n{background:rgba(11,31,58,.08)}.ki-r{background:rgba(192,40,44,.1)}.ki-a{background:rgba(192,124,42,.1)}.ki-g{background:rgba(33,122,75,.1)}
+.kv{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:3px}
+.kl{font-size:.71rem;color:var(--mist);text-transform:uppercase;letter-spacing:.3px}
+.kch{font-size:.73rem;margin-top:7px}.kup{color:var(--green-lt)}.kwarn{color:var(--amber)}
+.drow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.dr3{display:grid;grid-template-columns:3fr 2fr;gap:14px;margin-bottom:16px}
+.wg{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:20px}
+.wt{font-size:.69rem;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;color:var(--mist);margin-bottom:14px;padding-bottom:10px;border-top:1px solid var(--border-lt);display:flex;justify-content:space-between;align-items:center;padding-top:0;border-top:none;border-bottom:1px solid var(--border-lt)}
+.wa{color:var(--navy);cursor:pointer;font-size:.73rem;letter-spacing:0;text-transform:none;font-weight:700}
+.trow{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border-lt);font-size:.83rem}
+.trow:last-child{border-bottom:none}
+.trn{color:var(--text);font-weight:600}
+.trb{color:var(--soft);font-size:.76rem}
+.irow{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--border-lt);font-size:.83rem}
+.irow:last-child{border-bottom:none}
+.idot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.idr{background:var(--red)}.ida{background:var(--amber)}.idg{background:var(--green)}
+.in-name{color:var(--text);font-weight:600;margin-bottom:2px}
+.in-date{color:var(--mist);font-size:.73rem}
+.nrow{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid var(--border-lt)}
+.nrow:last-child{border-bottom:none}
+.nibo{width:34px;height:34px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.nmsg{font-size:.81rem;color:var(--text);line-height:1.5;margin-bottom:3px}
+.ntime{font-size:.7rem;color:var(--mist)}
+.cert-row{border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;display:flex;align-items:center;gap:12px;margin-bottom:8px;background:var(--pearl)}
+.crib{width:34px;height:34px;background:rgba(33,122,75,.1);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.cr-cn{font-size:.83rem;font-weight:600;color:var(--navy);margin-bottom:2px}
+.cr-ce{font-size:.72rem;color:var(--mist)}
+.pending-banner{background:rgba(192,124,42,.08);border:1px solid rgba(192,124,42,.2);border-left:3px solid var(--amber);border-radius:var(--r);padding:11px 15px;font-size:.82rem;color:var(--soft);margin-bottom:18px;line-height:1.6}
+.success-s{text-align:center;padding:52px 36px}
+.sico{width:74px;height:74px;background:rgba(33,122,75,.1);border:2px solid rgba(33,122,75,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 20px}
+.success-s h3{font-size:1.9rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.success-s p{color:var(--soft);font-size:.93rem;line-height:1.7;margin-bottom:28px;font-family:'Cormorant Garamond',serif;font-size:1.1rem}
+
+/* Footer */
+.ft{background:var(--navy);border-top:3px solid var(--amber)}
+.ft-main{max-width:1300px;margin:0 auto;padding:48px 52px 36px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px}
+.ft-brand p{font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(255,255,255,.42);line-height:1.8;margin-top:12px;max-width:270px;font-weight:400}
+.ft h5{font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.32);margin-bottom:14px}
+.ftl{list-style:none;display:flex;flex-direction:column;gap:8px}
+.ftl a{color:rgba(255,255,255,.52);text-decoration:none;font-size:.83rem;transition:color .2s}
+.ftl a:hover{color:#fff}
+.ft-bot{max-width:1300px;margin:0 auto;padding:16px 52px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center}
+.ft-bot p{font-size:.76rem;color:rgba(255,255,255,.32)}
+
+/* Misc */
+.divider{height:1px;background:var(--border-lt);margin:20px 0}
+@media(max-width:1100px){.hero-inner,.aud-grid,.pgrid,.drow,.dr3{grid-template-columns:1fr}.cgrid{grid-template-columns:repeat(2,1fr)}.tlayout,.jcr-layout{grid-template-columns:1fr}.contract-flow{grid-template-columns:repeat(2,1fr)}.kgrid{grid-template-columns:repeat(2,1fr)}.dlayout{grid-template-columns:1fr}.dsb{position:static;height:auto}}
+@media(max-width:768px){.govbar,.pstripe{padding:8px 20px}.hdr{padding:0 20px}.sw,.cw,.tenders-wrap,.inv-layout,.jcr-layout,.rw,.dmain,.ft-main,.ft-bot{padding-left:20px;padding-right:20px}.hero{padding:48px 20px}.frow,.type-opts,.size-opts{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr;max-width:360px}}
+</style>
+</head>
+<body>
+
+<!-- GOV BAR -->
+<div class="govbar">
+  <div class="gb-l">
+    <div class="gb-emblem">🦅</div>
+    <span>Sultanate of Oman &nbsp;·&nbsp; Under Supervision of Oman Civil Defence &amp; Ambulance Authority (OCDA)</span>
+  </div>
+  <div class="gb-r">
+    <a href="#">العربية</a><span style="color:rgba(255,255,255,.2)">|</span>
+    <a href="#">Accessibility</a><span style="color:rgba(255,255,255,.2)">|</span>
+    <a href="#" onclick="navigate('contact')">Contact</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="hdr">
+    <div class="logo" onclick="navigate('home')">
+      <div class="logo-mark"></div>
+      <div>
+        <div class="logo-title">Fire Protection Hub</div>
+        <div class="logo-sub">National Fire Safety Platform</div>
+      </div>
+    </div>
+    <nav class="mn">
+      <button class="ni active" data-page="home" onclick="navigate('home')">Home</button>
+      <button class="ni" data-page="companies" onclick="navigate('companies')">Companies</button>
+      <button class="ni" data-page="tenders" onclick="navigate('tenders')">Tenders</button>
+      <button class="ni" data-page="contracts" onclick="navigate('contracts')">Contracts</button>
+      <button class="ni" data-page="jcr" onclick="navigate('jcr')">JCR Reports</button>
+      <button class="ni" data-page="invoices" onclick="navigate('invoices')">Invoices</button>
+      <button class="ni" data-page="pricing" onclick="navigate('pricing')">Plans &amp; Fees</button>
+    </nav>
+    <div class="hdr-acts" id="hdr-acts">
+      <button class="btn btn-ghost" onclick="navigate('register')">Log In</button>
+      <button class="btn btn-primary" onclick="navigate('register')">Register</button>
+    </div>
+  </div>
+</header>
+
+<!-- ════ HOME ════ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="h-badge"><div class="h-dot"></div>Official National Registry · Est. 2024</div>
+        <h1>Oman's <em>Fire Protection</em><br>Management Hub</h1>
+        <p class="hero-desc">A centralised, government-supervised platform connecting building owners, contractors, and certified fire safety companies — from tender to contract, inspection to invoice.</p>
+        <div class="hero-acts">
+          <button class="btn btn-primary btn-lg" onclick="navigate('companies')">Browse Companies</button>
+          <button class="btn btn-outline-w btn-lg" onclick="navigate('tenders')">View Open Tenders</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hs"><div class="hs-n">100K<em>+</em></div><div class="hs-l">Registered Subscribers</div></div>
+          <div class="hs"><div class="hs-n">148<em>+</em></div><div class="hs-l">Certified Companies</div></div>
+          <div class="hs"><div class="hs-n">3.2K<em>+</em></div><div class="hs-l">Active Contracts</div></div>
+          <div class="hs"><div class="hs-n">94<em>%</em></div><div class="hs-l">Compliance Rate</div></div>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hp-title">Platform Capabilities</div>
+        <div class="feat-item">
+          <div class="feat-icon fi-r">📋</div>
+          <div class="feat-txt"><div class="feat-name">Tender Management</div><div class="feat-desc">Post and compete for fire safety projects with competitive bidding</div></div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon fi-a">📑</div>
+          <div class="feat-txt"><div class="feat-name">Contracts & JCR Reports</div><div class="feat-desc">Digital contracts and Job Completion Reports with e-signatures</div></div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon fi-g">🔔</div>
+          <div class="feat-txt"><div class="feat-name">Smart Notifications</div><div class="feat-desc">License expiry alerts and 6-month inspection reminders for both parties</div></div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon fi-b">💳</div>
+          <div class="feat-txt"><div class="feat-name">Invoice Management</div><div class="feat-desc">Submit, track and approve invoices through the platform</div></div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon fi-r">🏢</div>
+          <div class="feat-txt"><div class="feat-name">Company-Size Pricing</div><div class="feat-desc">Annual fees scaled by company size — fair for everyone</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <div class="proc-bg">
+    <div class="sw">
+      <div class="eyebrow"><div class="eline"></div><div class="etxt">Full Lifecycle</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:20px">
+        <h2 class="stitle">From Registration to Inspection</h2>
+        <p class="sdesc">Every step of a fire safety project — managed, documented, and compliant — on a single platform.</p>
+      </div>
+      <div class="proc-grid">
+        <div class="pc"><div class="pc-n">STEP 01</div><div class="pc-icon">🏢</div><h3>Register by Company Size</h3><p>Companies register with an annual fee scaled to their size (micro, small, medium, large). Upload Civil Defence certificates for verification.</p></div>
+        <div class="pc"><div class="pc-n">STEP 02</div><div class="pc-icon">📋</div><h3>Post or Attend Tenders</h3><p>Building owners post tenders with a listing fee. Certified companies receive instant notifications and submit competitive bids through the platform.</p></div>
+        <div class="pc"><div class="pc-n">STEP 03</div><div class="pc-icon">🤝</div><h3>Award &amp; Sign Contracts</h3><p>Review bids, select the best company, and sign a digital contract — all within the platform with full legal audit trail and e-signature.</p></div>
+        <div class="pc"><div class="pc-n">STEP 04</div><div class="pc-icon">📝</div><h3>Submit JCR Reports</h3><p>After work is completed, the company submits a Job Completion Report (JCR). The building owner reviews and e-signs to confirm completion.</p></div>
+        <div class="pc"><div class="pc-n">STEP 05</div><div class="pc-icon">💳</div><h3>Invoice Through Platform</h3><p>Companies submit invoices tied to the contract. Owners approve and payments are tracked. Full financial history is stored in the platform.</p></div>
+        <div class="pc"><div class="pc-n">STEP 06</div><div class="pc-icon">🔔</div><h3>Inspection &amp; Renewal Alerts</h3><p>6 months after each contract, both parties receive automatic inspection reminders. License expiry notifications sent 60, 30, and 7 days in advance.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audience -->
+  <div class="sw" style="padding-top:56px;padding-bottom:72px">
+    <div class="eyebrow"><div class="eline"></div><div class="etxt">Who Uses the Platform</div></div>
+    <h2 class="stitle">Three Stakeholder Groups. One Platform.</h2>
+    <div class="aud-grid">
+      <div class="ac ac-dark">
+        <div class="atag at-a">🏗 Building Owners &amp; Contractors</div>
+        <h3>Find &amp; Manage Fire Safety Partners</h3>
+        <p>Browse the certified national registry, post tenders, manage digital contracts, and stay compliant — automatically reminded for every inspection deadline.</p>
+        <ul class="fl">
+          <li><div class="fck">✓</div>Post tenders and receive competitive bids</li>
+          <li><div class="fck">✓</div>Digital contract signing and archive</li>
+          <li><div class="fck">✓</div>Review and sign JCR reports online</li>
+          <li><div class="fck">✓</div>6-month inspection reminders — automatic</li>
+          <li><div class="fck">✓</div>Approve invoices through the platform</li>
+        </ul>
+      </div>
+      <div class="ac ac-light">
+        <div class="atag at-n">🔥 Fire Safety Companies</div>
+        <h3>Grow Your Business. Stay Compliant.</h3>
+        <p>Get notified of relevant tenders, bid on projects, manage contracts and JCR submissions, issue invoices, and receive timely license renewal reminders.</p>
+        <ul class="fl">
+          <li><div class="fck">✓</div>Verified profile with certificate display</li>
+          <li><div class="fck">✓</div>Tender notifications matching your services</li>
+          <li><div class="fck">✓</div>Submit JCR reports for owner e-signature</li>
+          <li><div class="fck">✓</div>Issue and track invoices per contract</li>
+          <li><div class="fck">✓</div>License expiry alerts 60/30/7 days ahead</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ COMPANIES ════ -->
+<div class="page" id="page-companies">
+  <div class="pstripe">
+    <div class="pstripe-inner">
+      <div><div class="pbc">Home <span>/ Certified Companies</span></div><h2>Certified Fire Safety Companies</h2><p>All companies verified by Oman Civil Defence &amp; Ambulance Authority</p></div>
+      <button class="btn btn-amber" onclick="navigate('register')">Register Your Company</button>
+    </div>
+  </div>
+  <div class="fsec">
+    <div class="fin">
+      <input class="sinput" type="text" placeholder="🔍  Search company name or location…">
+      <select class="fsel"><option>All Governorates</option><option>Muscat</option><option>Dhofar</option><option>Al Batinah</option><option>Musandam</option></select>
+      <select class="fsel"><option>All Services</option><option>Fire Suppression</option><option>Alarm Systems</option><option>Sprinkler Systems</option><option>Emergency Lighting</option><option>AMC</option></select>
+      <select class="fsel"><option>All Sizes</option><option>Micro (&lt;10 staff)</option><option>Small (10–49)</option><option>Medium (50–199)</option><option>Large (200+)</option></select>
+      <button class="fchip on">All</button>
+      <button class="fchip">Verified</button>
+      <button class="fchip">Top Rated</button>
+    </div>
+  </div>
+  <div class="cw">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+      <p style="font-size:.83rem;color:var(--mist)">Showing <strong style="color:var(--text)">148</strong> certified companies</p>
+      <select class="fsel"><option>Sort: Top Rated</option><option>Sort: Newest</option><option>Sort: Most Projects</option></select>
+    </div>
+    <div class="cgrid">
+      <div class="ccard"><div class="cch"><div class="cav" style="background:linear-gradient(135deg,#C0282C,#D93B3F)">AG</div><div class="cpill">✓ Certified</div></div><div class="cname">Al-Aman Gulf Fire Safety</div><div class="cloc">📍 Muscat, Al Khuwair · Est. 2009</div><div class="ctags"><span class="ctag">Fire Suppression</span><span class="ctag">Alarm Systems</span><span class="ctag">AMC</span></div><div class="cfoot"><div class="crat">★★★★★ 4.9</div><span class="csz">Medium · 65 staff</span></div></div>
+      <div class="ccard"><div class="cch"><div class="cav" style="background:linear-gradient(135deg,#1A3D7C,#2563EB)">SF</div><div class="cpill">✓ Certified</div></div><div class="cname">Safir Technical Services</div><div class="cloc">📍 Muscat, Ghubra · Est. 2013</div><div class="ctags"><span class="ctag">Sprinkler Systems</span><span class="ctag">Gas Suppression</span></div><div class="cfoot"><div class="crat">★★★★☆ 4.7</div><span class="csz">Small · 28 staff</span></div></div>
+      <div class="ccard"><div class="cch"><div class="cav" style="background:linear-gradient(135deg,#065F46,#10B981)">NF</div><div class="cpill">✓ Certified</div></div><div class="cname">Nasr Fire Protection LLC</div><div class="cloc">📍 Sohar, Al Batinah · Est. 2016</div><div class="ctags"><span class="ctag">Emergency Lighting</span><span class="ctag">Hydrant Systems</span></div><div class="cfoot"><div class="crat">★★★★★ 4.8</div><span class="csz">Small · 22 staff</span></div></div>
+      <div class="ccard"><div class="cch"><div class="cav" style="background:linear-gradient(135deg,#5B21B6,#7C3AED)">GS</div><div class="cpill">✓ Certified</div></div><div class="cname">Gulf Shield Systems Co.</div><div class="cloc">📍 Muscat, Ruwi · Est. 2011</div><div class="ctags"><span class="ctag">Clean Agent</span><span class="ctag">Fire Pumps</span></div><div class="cfoot"><div class="crat">★★★★☆ 4.6</div><span class="csz">Large · 210 staff</span></div></div>
+      <div class="ccard"><div class="cch"><div class="cav" style="background:linear-gradient(135deg,#B45309,#D97706)">RP</div><div class="cpill">✓ Certified</div></div><div class="cname">Raha Protection Co.</div><div class="cloc">📍 Salalah, Dhofar · Est. 2018</div><div class="ctags"><span class="ctag">Suppression</span><span class="ctag">Inspection</span></div><div class="cfoot"><div class="crat">★★★★★ 4.9</div><span class="csz">Micro · 8 staff</span></div></div>
+      <div class="ccard" style="border-style:dashed;display:flex;align-items:center;justify-content:center;min-height:180px"><div style="text-align:center;color:var(--mist)"><div style="font-size:1.6rem;opacity:.4;margin-bottom:8px">🔒</div><div style="font-weight:700;color:var(--soft);font-size:.88rem;margin-bottom:4px">142 More Companies</div><div style="font-size:.78rem;margin-bottom:14px">Login to access full directory</div><button class="btn btn-navy btn-sm" onclick="navigate('register')">Register</button></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ TENDERS ════ -->
+<div class="page" id="page-tenders">
+  <div class="pstripe">
+    <div class="pstripe-inner">
+      <div><div class="pbc">Home <span>/ Tenders</span></div><h2>Open Project Tenders</h2><p>Post a fire safety project and receive competitive bids from certified companies</p></div>
+      <button class="btn btn-amber btn-lg" onclick="navigate('register')">+ Post a Tender (OMR 25)</button>
+    </div>
+  </div>
+  <div class="tlayout">
+    <div>
+      <div style="display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap">
+        <input class="sinput" type="text" placeholder="🔍  Search tenders…">
+        <select class="fsel"><option>All Types</option><option>New Installation</option><option>Maintenance (AMC)</option><option>Inspection</option></select>
+        <select class="fsel"><option>All Governorates</option><option>Muscat</option><option>Dhofar</option><option>Sohar</option></select>
+      </div>
+      <div class="tlist">
+        <div class="tcard hot"><div><div class="ttop"><span class="ttype">New Installation</span><span class="turgent">⚡ Urgent</span></div><div class="ttitle">Complete Fire Suppression System — 24-Floor Commercial Tower</div><div class="tmeta">📍 Muscat, Al Mouj &nbsp;·&nbsp; Al Raed Contracting LLC &nbsp;·&nbsp; 8 bids</div></div><div class="tr"><div class="tbudget">OMR 85,000</div><div class="tdead">Closes 28 Mar 2026</div><div class="tbids">● 8 active bids</div></div></div>
+        <div class="tcard"><div><div class="ttop"><span class="ttype">Maintenance Contract (AMC)</span></div><div class="ttitle">Annual Maintenance Contract — Hotel &amp; Hospitality Complex</div><div class="tmeta">📍 Salalah, Dhofar &nbsp;·&nbsp; Salalah Beach Resort &nbsp;·&nbsp; 5 bids</div></div><div class="tr"><div class="tbudget">OMR 12,500/yr</div><div class="tdead">Closes 3 Apr 2026</div><div class="tbids">5 active bids</div></div></div>
+        <div class="tcard"><div><div class="ttop"><span class="ttype">Inspection &amp; Upgrade</span></div><div class="ttitle">Fire Alarm Upgrade &amp; 6-Month Inspection — Industrial Warehouse</div><div class="tmeta">📍 Sohar, Al Batinah &nbsp;·&nbsp; Sohar Industrial LLC &nbsp;·&nbsp; 3 bids</div></div><div class="tr"><div class="tbudget">OMR 22,000</div><div class="tdead">Closes 10 Apr 2026</div><div class="tbids">3 active bids</div></div></div>
+        <div class="tcard"><div><div class="ttop"><span class="ttype">New Installation</span></div><div class="ttitle">Sprinkler &amp; Emergency Lighting — Residential Compound (120 Units)</div><div class="tmeta">📍 Muscat, Mawaleh &nbsp;·&nbsp; Muscat Properties Dev. &nbsp;·&nbsp; 12 bids</div></div><div class="tr"><div class="tbudget">OMR 44,000</div><div class="tdead">Closes 15 Apr 2026</div><div class="tbids">12 active bids</div></div></div>
+        <div class="tcard"><div><div class="ttop"><span class="ttype">Emergency Repair</span></div><div class="ttitle">Fire Pump Overhaul &amp; Compliance Check — Government Complex</div><div class="tmeta">📍 Muscat, Ministries Area &nbsp;·&nbsp; Directorate of Facilities &nbsp;·&nbsp; 6 bids</div></div><div class="tr"><div class="tbudget">OMR 18,000</div><div class="tdead">Closes 20 Apr 2026</div><div class="tbids">6 active bids</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="tsc"><h4>Tender Statistics</h4><div class="scrow"><div class="scstat"><div class="scv">24</div><div class="scl">Open</div></div><div class="scstat"><div class="scv">7</div><div class="scl">New / Week</div></div></div><div class="scrow"><div class="scstat"><div class="scv">143</div><div class="scl">Total Bids</div></div><div class="scstat"><div class="scv">OMR 25</div><div class="scl">Listing Fee</div></div></div></div>
+      <div class="tsc"><h4>Post a Tender</h4><p style="font-size:.83rem;color:var(--soft);line-height:1.65;margin-bottom:14px">Reach 148+ certified companies. One-time OMR 25 fee. Live for 30 days.</p><button class="btn btn-primary btn-full" onclick="navigate('register')">Post Now →</button></div>
+      <div class="tsc"><h4>Are You a Company?</h4><p style="font-size:.83rem;color:var(--soft);line-height:1.65;margin-bottom:14px">Register and start bidding on tenders matching your services and location.</p><button class="btn btn-outline btn-full" onclick="navigate('register')">Register Company</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ CONTRACTS ════ -->
+<div class="page" id="page-contracts">
+  <div class="pstripe">
+    <div class="pstripe-inner">
+      <div><div class="pbc">Home <span>/ Contracts</span></div><h2>Contracts &amp; Agreements</h2><p>All contracts negotiated, signed, and archived digitally through the platform</p></div>
+    </div>
+  </div>
+  <div class="sw" style="padding-top:36px;padding-bottom:36px">
+    <div class="eyebrow"><div class="eline"></div><div class="etxt">How Contracts Work</div></div>
+    <h2 class="stitle">End-to-End Digital Contract Management</h2>
+    <div class="contract-flow">
+      <div class="cf-card"><div class="cf-num">1</div><div class="cf-icon">🏆</div><h3>Tender Awarded</h3><p>Owner selects winning bid from the platform's tender board</p></div>
+      <div class="cf-card"><div class="cf-num">2</div><div class="cf-icon">📑</div><h3>Contract Drafted</h3><p>Platform generates a standard contract. Both parties review terms.</p></div>
+      <div class="cf-card"><div class="cf-num">3</div><div class="cf-icon">✍️</div><h3>E-Signature</h3><p>Both the building owner and the company sign digitally — legally binding.</p></div>
+      <div class="cf-card"><div class="cf-num">4</div><div class="cf-icon">🔔</div><h3>Inspection Reminders</h3><p>6 months after signing, both parties receive automatic inspection alerts.</p></div>
+    </div>
+
+    <div style="margin-top:44px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--navy);font-family:'Nunito Sans',sans-serif">Active Contracts (Demo)</h3>
+        <button class="btn btn-navy btn-sm" onclick="navigate('register')">My Contracts →</button>
+      </div>
+      <div class="contract-list">
+        <div class="contract-row"><div><div class="cr-title">Fire Suppression System — Al Mouj Tower</div><div class="cr-meta">Company: Al-Aman Gulf &nbsp;·&nbsp; Owner: Al Raed Contracting &nbsp;·&nbsp; Signed: 15 Jan 2026</div></div><span class="sp sp-active">Active</span><button class="btn btn-ghost btn-sm">View</button></div>
+        <div class="contract-row"><div><div class="cr-title">Annual Maintenance Contract — Salalah Hotel</div><div class="cr-meta">Company: Raha Protection &nbsp;·&nbsp; Owner: Salalah Beach Resort &nbsp;·&nbsp; Signed: 1 Feb 2026</div></div><span class="sp sp-active">Active</span><button class="btn btn-ghost btn-sm">View</button></div>
+        <div class="contract-row"><div><div class="cr-title">Sprinkler System — Mawaleh Compound</div><div class="cr-meta">Company: Safir Technical &nbsp;·&nbsp; Owner: Muscat Properties Dev. &nbsp;·&nbsp; Signed: 20 Feb 2026</div></div><span class="sp sp-pending">Pending JCR</span><button class="btn btn-ghost btn-sm">View</button></div>
+        <div class="contract-row"><div><div class="cr-title">Fire Alarm System — Sohar Warehouse</div><div class="cr-meta">Company: Nasr Fire Protection &nbsp;·&nbsp; Owner: Sohar Industrial &nbsp;·&nbsp; Signed: 5 Mar 2026</div></div><span class="sp sp-review">Under Review</span><button class="btn btn-ghost btn-sm">View</button></div>
+        <div class="contract-row"><div><div class="cr-title">Emergency Lighting — Ruwi Office Block</div><div class="cr-meta">Company: Gulf Shield Systems &nbsp;·&nbsp; Owner: Ruwi Holdings &nbsp;·&nbsp; Expired: 10 Jan 2026</div></div><span class="sp sp-expired">Expired</span><button class="btn btn-ghost btn-sm">Renew</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ JCR REPORTS ════ -->
+<div class="page" id="page-jcr">
+  <div class="pstripe">
+    <div class="pstripe-inner">
+      <div><div class="pbc">Home <span>/ JCR Reports</span></div><h2>Job Completion Reports (JCR)</h2><p>Submitted by the fire safety company · Reviewed and e-signed by the building owner</p></div>
+    </div>
+  </div>
+  <div class="jcr-layout">
+    <div>
+      <div class="jcr-form-panel">
+        <h3>Submit Job Completion Report</h3>
+        <p class="jcr-sub">Fill in the work details, complete the checklist, and submit for owner review. The owner will receive an email notification to review and e-sign.</p>
+        <div class="infobox">This JCR is linked to: <strong>Contract #FPH-2026-0412</strong> — Fire Suppression System, Al Mouj Tower</div>
+        <div class="frow">
+          <div class="fg"><label>Job Start Date</label><input class="fi" type="date" value="2026-01-15"></div>
+          <div class="fg"><label>Job Completion Date</label><input class="fi" type="date" value="2026-03-10"></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Engineer in Charge</label><input class="fi" type="text" placeholder="Name &amp; License No."></div>
+          <div class="fg"><label>Civil Defence Permit No.</label><input class="fi" type="text" placeholder="CD-2026-XXXXX"></div>
+        </div>
+        <div class="fg"><label>Scope of Work Completed</label><textarea class="fi" rows="3" style="resize:vertical" placeholder="Describe all work completed, systems installed/tested…"></textarea></div>
+
+        <div style="font-size:.77rem;font-weight:700;color:var(--soft);letter-spacing:.2px;margin-bottom:10px;margin-top:4px">INSPECTION CHECKLIST</div>
+        <div class="checklist">
+          <label class="chk-item checked"><input type="checkbox" checked> Fire detection system tested and operational</label>
+          <label class="chk-item checked"><input type="checkbox" checked> All sprinkler heads pressure-tested</label>
+          <label class="chk-item checked"><input type="checkbox" checked> Emergency lighting function verified</label>
+          <label class="chk-item"><input type="checkbox"> Fire pump performance test completed</label>
+          <label class="chk-item"><input type="checkbox"> Civil Defence approval obtained</label>
+          <label class="chk-item"><input type="checkbox"> Handover documentation provided to owner</label>
+        </div>
+
+        <div class="fg" style="margin-top:8px"><label>Attach Supporting Documents (photos, test reports)</label>
+          <div class="ubox" style="margin-bottom:0;min-height:64px"><div style="font-size:1.3rem">📎</div><p>Click to upload files · PDF, JPG, PNG</p></div>
+        </div>
+
+        <div style="margin-top:20px">
+          <div style="font-size:.77rem;font-weight:700;color:var(--soft);margin-bottom:8px">COMPANY ENGINEER SIGNATURE</div>
+          <div class="sig-box signed">✅ &nbsp; Signed by: Eng. Khalid Al Rashdi<div style="font-size:.72rem;margin-top:2px">21 March 2026 · 10:24 AM</div></div>
+          <div style="font-size:.77rem;font-weight:700;color:var(--soft);margin-bottom:8px">BUILDING OWNER SIGNATURE</div>
+          <div class="sig-box" onclick="this.classList.add('signed');this.innerHTML='✅ &nbsp; Signed by: Mohammed Al Balushi<div style=\'font-size:.72rem;margin-top:2px\'>Tap to sign digitally</div>'">🖊️ &nbsp; Pending owner signature<div style="font-size:.72rem;margin-top:2px">Owner will receive email to sign</div></div>
+        </div>
+
+        <div class="factions">
+          <button class="btn btn-ghost">Save Draft</button>
+          <button class="btn btn-green">Submit JCR for Owner Review →</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="jcr-sc">
+      <div class="jcr-sc-card">
+        <h4>Recent JCR Reports</h4>
+        <div class="jcr-item"><div><div class="ji-name">Al Mouj Tower — Suppression</div><div class="ji-date">Submitted 21 Mar 2026</div></div><span class="sp sp-pending">Awaiting Signature</span></div>
+        <div class="jcr-item"><div><div class="ji-name">Salalah Hotel — AMC Q1</div><div class="ji-date">Submitted 14 Mar 2026</div></div><span class="sp sp-active">Signed</span></div>
+        <div class="jcr-item"><div><div class="ji-name">Sohar Warehouse — Upgrade</div><div class="ji-date">Submitted 2 Mar 2026</div></div><span class="sp sp-active">Signed</span></div>
+        <div class="jcr-item"><div><div class="ji-name">Mawaleh Compound — Sprinklers</div><div class="ji-date">Draft · Not submitted</div></div><span class="sp sp-review">Draft</span></div>
+      </div>
+      <div class="jcr-sc-card">
+        <h4>What is a JCR?</h4>
+        <p style="font-size:.83rem;color:var(--soft);line-height:1.7">A <strong>Job Completion Report (JCR)</strong> is the official record confirming that fire safety work has been carried out to specification. It includes the work scope, inspection checklist, Civil Defence permit number, and must be co-signed by both the company engineer and building owner before invoicing can proceed.</p>
+      </div>
+      <div class="jcr-sc-card">
+        <h4>6-Month Inspection Reminder</h4>
+        <div class="nitem"><div class="nibox ni-a">⏰</div><div><div class="nm">Inspection due in <strong style="color:var(--red)">2 days</strong> for Al Mouj Tower. Both parties have been notified.</div><div class="nt">23 March 2026</div></div></div>
+        <div class="nitem"><div class="nibox ni-a">⏰</div><div><div class="nm">Salalah Hotel 6-month inspection coming in 14 days.</div><div class="nt">4 April 2026</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ INVOICES ════ -->
+<div class="page" id="page-invoices">
+  <div class="pstripe">
+    <div class="pstripe-inner">
+      <div><div class="pbc">Home <span>/ Invoices</span></div><h2>Invoice Management</h2><p>Companies submit invoices · Owners review and approve · Full financial history stored</p></div>
+      <button class="btn btn-amber" onclick="navigate('register')">+ Submit Invoice</button>
+    </div>
+  </div>
+  <div class="inv-layout">
+    <div style="display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:16px 22px;flex:1;min-width:140px">
+        <div style="font-size:.69rem;text-transform:uppercase;letter-spacing:1px;color:var(--mist);font-weight:700;margin-bottom:6px">Total Invoiced</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy)">OMR 124,850</div>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:16px 22px;flex:1;min-width:140px">
+        <div style="font-size:.69rem;text-transform:uppercase;letter-spacing:1px;color:var(--mist);font-weight:700;margin-bottom:6px">Paid</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--green)">OMR 98,200</div>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:16px 22px;flex:1;min-width:140px">
+        <div style="font-size:.69rem;text-transform:uppercase;letter-spacing:1px;color:var(--mist);font-weight:700;margin-bottom:6px">Pending Approval</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--amber)">OMR 26,650</div>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:16px 22px;flex:1;min-width:140px">
+        <div style="font-size:.69rem;text-transform:uppercase;letter-spacing:1px;color:var(--mist);font-weight:700;margin-bottom:6px">Overdue</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--red)">OMR 0</div>
+      </div>
+    </div>
+
+    <div class="inv-list">
+      <div style="display:grid;grid-template-columns:60px 1fr auto auto auto;gap:18px;padding:8px 22px;font-size:.71rem;font-weight:700;color:var(--mist);letter-spacing:.5px;text-transform:uppercase">
+        <span>INV #</span><span>Project / Company</span><span>Amount</span><span>Date</span><span>Status</span>
+      </div>
+      <div class="inv-row"><div class="inv-id">#0421</div><div><div class="inv-name">Fire Suppression — Al Mouj Tower</div><div class="inv-meta">Al-Aman Gulf Fire Safety → Al Raed Contracting</div></div><div class="inv-amount">OMR 42,500</div><div class="inv-date">21 Mar 2026</div><span class="sp sp-pending">Pending Approval</span></div>
+      <div class="inv-row"><div class="inv-id">#0418</div><div><div class="inv-name">AMC Q1 — Salalah Hotel</div><div class="inv-meta">Raha Protection Co. → Salalah Beach Resort</div></div><div class="inv-amount">OMR 3,125</div><div class="inv-date">14 Mar 2026</div><span class="sp sp-active">Paid</span></div>
+      <div class="inv-row"><div class="inv-id">#0415</div><div><div class="inv-name">Sprinkler Installation — Mawaleh Compound</div><div class="inv-meta">Safir Technical Services → Muscat Properties Dev.</div></div><div class="inv-amount">OMR 22,000</div><div class="inv-date">10 Mar 2026</div><span class="sp sp-pending">Pending Approval</span></div>
+      <div class="inv-row"><div class="inv-id">#0409</div><div><div class="inv-name">Fire Alarm Upgrade — Sohar Warehouse</div><div class="inv-meta">Nasr Fire Protection → Sohar Industrial LLC</div></div><div class="inv-amount">OMR 11,000</div><div class="inv-date">2 Mar 2026</div><span class="sp sp-active">Paid</span></div>
+      <div class="inv-row"><div class="inv-id">#0401</div><div><div class="inv-name">Hydrant System — Seeb Logistics Hub</div><div class="inv-meta">Gulf Shield Systems → Seeb Properties LLC</div></div><div class="inv-amount">OMR 19,575</div><div class="inv-date">22 Feb 2026</div><span class="sp sp-active">Paid</span></div>
+    </div>
+
+    <div style="margin-top:32px;background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:28px">
+      <h3 style="font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:12px">Invoice Workflow</h3>
+      <p style="font-size:.86rem;color:var(--soft);line-height:1.7;margin-bottom:18px">Invoices can only be submitted after a JCR has been signed by both parties. This ensures payment is always tied to verified, completed work.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+        <div style="text-align:center;padding:16px 12px;background:var(--pearl);border-radius:var(--r);border:1px solid var(--border-lt)"><div style="font-size:1.4rem;margin-bottom:8px">📝</div><div style="font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:3px">JCR Signed</div><div style="font-size:.72rem;color:var(--mist)">Both parties approve</div></div>
+        <div style="text-align:center;padding:16px 12px;background:var(--pearl);border-radius:var(--r);border:1px solid var(--border-lt)"><div style="font-size:1.4rem;margin-bottom:8px">💳</div><div style="font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:3px">Invoice Submitted</div><div style="font-size:.72rem;color:var(--mist)">Company raises invoice</div></div>
+        <div style="text-align:center;padding:16px 12px;background:var(--pearl);border-radius:var(--r);border:1px solid var(--border-lt)"><div style="font-size:1.4rem;margin-bottom:8px">✅</div><div style="font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:3px">Owner Approves</div><div style="font-size:.72rem;color:var(--mist)">Payment authorised</div></div>
+        <div style="text-align:center;padding:16px 12px;background:var(--pearl);border-radius:var(--r);border:1px solid var(--border-lt)"><div style="font-size:1.4rem;margin-bottom:8px">🏦</div><div style="font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:3px">Payment Released</div><div style="font-size:.72rem;color:var(--mist)">Archived on platform</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PRICING ════ -->
+<div class="page" id="page-pricing">
+  <div class="pstripe">
+    <div class="pstripe-inner">
+      <div><div class="pbc">Home <span>/ Plans &amp; Fees</span></div><h2>Plans &amp; Registration Fees</h2><p>Annual fees scaled by company size · One-time tender listing fee for project owners</p></div>
+    </div>
+  </div>
+  <div class="sw" style="padding-top:44px">
+    <div class="eyebrow"><div class="eline"></div><div class="etxt">Company Plans — Priced by Size</div></div>
+    <h2 class="stitle">Fair Pricing Based on Company Size</h2>
+    <p class="sdesc" style="margin-bottom:8px">Your annual subscription is determined by your number of employees — ensuring micro-businesses pay fairly, while large enterprises get enterprise-grade tools.</p>
+
+    <div class="pgrid">
+      <div class="pcard">
+        <span class="psize">Micro Company</span>
+        <div style="font-size:.8rem;color:var(--mist);margin-bottom:12px">1 – 9 employees</div>
+        <div class="pamt">OMR 100</div>
+        <div class="pperiod">per year</div>
+        <div class="pdiv"></div>
+        <ul class="pfeats">
+          <li><span class="pck">✓</span> Verified company profile</li>
+          <li><span class="pck">✓</span> Upload 2 certificates</li>
+          <li><span class="pck">✓</span> Bid on 5 tenders/month</li>
+          <li><span class="pck">✓</span> Email notifications</li>
+          <li><span class="pck">✓</span> JCR &amp; invoice tools</li>
+          <li class="off"><span class="pck">—</span> Priority directory listing</li>
+          <li class="off"><span class="pck">—</span> Analytics dashboard</li>
+        </ul>
+        <button class="btn btn-outline btn-full" onclick="navigate('register')">Register — Micro</button>
+      </div>
+
+      <div class="pcard">
+        <span class="psize">Small Company</span>
+        <div style="font-size:.8rem;color:var(--mist);margin-bottom:12px">10 – 49 employees</div>
+        <div class="pamt">OMR 250</div>
+        <div class="pperiod">per year</div>
+        <div class="pdiv"></div>
+        <ul class="pfeats">
+          <li><span class="pck">✓</span> Verified company profile</li>
+          <li><span class="pck">✓</span> Upload 5 certificates</li>
+          <li><span class="pck">✓</span> Bid on 20 tenders/month</li>
+          <li><span class="pck">✓</span> Email + SMS notifications</li>
+          <li><span class="pck">✓</span> JCR &amp; invoice tools</li>
+          <li><span class="pck">✓</span> Basic analytics</li>
+          <li class="off"><span class="pck">—</span> Priority directory listing</li>
+        </ul>
+        <button class="btn btn-outline btn-full" onclick="navigate('register')">Register — Small</button>
+      </div>
+
+      <div class="pcard pfeat">
+        <div class="pop-tag">Most Popular</div>
+        <span class="psize">Medium Company</span>
+        <div style="font-size:.8rem;color:rgba(255,255,255,.42);margin-bottom:12px">50 – 199 employees</div>
+        <div class="pamt">OMR 450</div>
+        <div class="pperiod">per year</div>
+        <div class="pdiv"></div>
+        <ul class="pfeats">
+          <li><span class="pck">✓</span> Everything in Small</li>
+          <li><span class="pck">✓</span> Unlimited certificates</li>
+          <li><span class="pck">✓</span> Unlimited tender bids</li>
+          <li><span class="pck">✓</span> Priority directory listing</li>
+          <li><span class="pck">✓</span> Full analytics dashboard</li>
+          <li><span class="pck">✓</span> Multi-user access (5 seats)</li>
+          <li><span class="pck">✓</span> Dedicated support</li>
+        </ul>
+        <button class="btn btn-outline-w btn-full" onclick="navigate('register')">Register — Medium</button>
+      </div>
+
+      <div class="pcard">
+        <span class="psize">Large Enterprise</span>
+        <div style="font-size:.8rem;color:var(--mist);margin-bottom:12px">200+ employees</div>
+        <div class="pamt">OMR 800</div>
+        <div class="pperiod">per year</div>
+        <div class="pdiv"></div>
+        <ul class="pfeats">
+          <li><span class="pck">✓</span> Everything in Medium</li>
+          <li><span class="pck">✓</span> Featured badge + top listing</li>
+          <li><span class="pck">✓</span> Unlimited user seats</li>
+          <li><span class="pck">✓</span> Account manager</li>
+          <li><span class="pck">✓</span> Multi-branch management</li>
+          <li><span class="pck">✓</span> API integration access</li>
+          <li><span class="pck">✓</span> Custom contract templates</li>
+        </ul>
+        <button class="btn btn-navy btn-full" onclick="navigate('register')">Contact Sales</button>
+      </div>
+    </div>
+
+    <div class="fee-row">
+      <div>
+        <div style="font-weight:700;font-size:1.02rem;color:var(--navy);margin-bottom:5px;font-family:'Nunito Sans',sans-serif">Tender Listing Fee — Building Owners &amp; Contractors</div>
+        <p style="font-size:.85rem;color:var(--soft);max-width:580px;line-height:1.65">A one-time OMR 25 fee per tender posted. No annual subscription required. Tenders are live for 30 days and visible to all registered companies. The fee ensures serious, qualified project postings.</p>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--red)">OMR 25</div>
+        <div style="font-size:.76rem;color:var(--mist)">per tender listing</div>
+      </div>
+    </div>
+
+    <!-- Notification features -->
+    <div style="margin-top:32px;background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:32px">
+      <h3 style="font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:20px">Included in All Plans: Smart Notification System</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+        <div style="padding:18px;background:rgba(192,40,44,.05);border:1px solid rgba(192,40,44,.15);border-radius:var(--r)">
+          <div style="font-size:1.3rem;margin-bottom:10px">🔴</div>
+          <div style="font-weight:700;color:var(--navy);font-size:.88rem;margin-bottom:5px">License Expiry Alerts</div>
+          <div style="font-size:.8rem;color:var(--soft);line-height:1.6">Automated reminders at 60, 30, and 7 days before your Civil Defence certificate expires — so you never lose your listing.</div>
+        </div>
+        <div style="padding:18px;background:rgba(192,124,42,.05);border:1px solid rgba(192,124,42,.15);border-radius:var(--r)">
+          <div style="font-size:1.3rem;margin-bottom:10px">🟡</div>
+          <div style="font-weight:700;color:var(--navy);font-size:.88rem;margin-bottom:5px">6-Month Inspection Reminders</div>
+          <div style="font-size:.8rem;color:var(--soft);line-height:1.6">After each signed contract, both the company and building owner receive automatic reminders when the 6-month mandatory inspection is due.</div>
+        </div>
+        <div style="padding:18px;background:rgba(33,122,75,.05);border:1px solid rgba(33,122,75,.15);border-radius:var(--r)">
+          <div style="font-size:1.3rem;margin-bottom:10px">🟢</div>
+          <div style="font-weight:700;color:var(--navy);font-size:.88rem;margin-bottom:5px">Tender &amp; JCR Notifications</div>
+          <div style="font-size:.8rem;color:var(--soft);line-height:1.6">Instant alerts for new matching tenders, JCR submissions awaiting signature, invoice approvals, and bid status updates.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ REGISTER ════ -->
+<div class="page" id="page-register">
+  <div class="pstripe">
+    <div class="pstripe-inner">
+      <div><div class="pbc">Home <span>/ Register</span></div><h2>Create Your Account</h2><p>Join the Fire Protection Hub — the national fire safety management platform</p></div>
+    </div>
+  </div>
+  <div class="rw">
+    <div class="rsteps" id="rsteps">
+      <div class="rss"><div class="rsn act" id="sn1">1</div><div class="rsl act" id="sl1">Account Type</div></div>
+      <div class="rsline"></div>
+      <div class="rss"><div class="rsn pend" id="sn2">2</div><div class="rsl pend" id="sl2">Details</div></div>
+      <div class="rsline"></div>
+      <div class="rss"><div class="rsn pend" id="sn3">3</div><div class="rsl pend" id="sl3">Certificates</div></div>
+      <div class="rsline"></div>
+      <div class="rss"><div class="rsn pend" id="sn4">4</div><div class="rsl pend" id="sl4">Plan &amp; Pay</div></div>
+    </div>
+
+    <div id="rs1" class="rpanel">
+      <h3>Select Account Type</h3>
+      <p class="rsub">Choose your role. The registration flow will adapt accordingly.</p>
+      <div class="type-opts">
+        <div class="topt sel" id="to-co" onclick="selType('co')"><div class="to-ico">🔥</div><div class="to-name">Fire Safety Company</div><div class="to-desc">Annual subscription by company size. Upload certifications, attend tenders, submit JCRs &amp; invoices.</div></div>
+        <div class="topt" id="to-ow" onclick="selType('ow')"><div class="to-ico">🏢</div><div class="to-name">Building Owner / Contractor</div><div class="to-desc">Post tenders (OMR 25/listing). Sign contracts, review JCRs, approve invoices.</div></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>Full Name</label><input class="fi" type="text" placeholder="Mohammed Al Balushi"></div>
+        <div class="fg"><label>Email Address</label><input class="fi" type="email" placeholder="m.balushi@company.om"></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>Mobile Number</label><input class="fi" type="tel" placeholder="+968 9XXX XXXX"></div>
+        <div class="fg"><label>Password</label><input class="fi" type="password" placeholder="Min. 8 characters"></div>
+      </div>
+      <div class="factions"><button class="btn btn-primary" onclick="gostep(2)">Continue →</button></div>
+    </div>
+
+    <div id="rs2" class="rpanel" style="display:none">
+      <h3>Company Information</h3>
+      <p class="rsub">Official details as registered with the Ministry of Commerce, Industry &amp; Investment Promotion.</p>
+      <div class="frow">
+        <div class="fg"><label>Company Name (English)</label><input class="fi" type="text" placeholder="Al-Aman Gulf Fire Safety LLC"></div>
+        <div class="fg"><label>Company Name (Arabic)</label><input class="fi" type="text" placeholder="شركة الأمان الخليجي"></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>Commercial Registration No.</label><input class="fi" type="text" placeholder="1234567"></div>
+        <div class="fg"><label>Tax ID (VAT)</label><input class="fi" type="text" placeholder="OM-TAX-XXXXXXX"></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>Governorate</label><select class="fi"><option value="">Select…</option><option>Muscat</option><option>Dhofar</option><option>Al Batinah North</option><option>Al Batinah South</option><option>Musandam</option><option>Al Dakhiliyah</option></select></div>
+        <div class="fg"><label>Primary Service</label><select class="fi"><option>Fire Suppression</option><option>Alarm Systems</option><option>Sprinkler Systems</option><option>Emergency Lighting</option><option>AMC</option><option>Multiple Services</option></select></div>
+      </div>
+      <div class="fg"><label>Company Address</label><input class="fi" type="text" placeholder="Building, Street, Wilayat, Governorate"></div>
+      <div class="factions"><button class="btn btn-ghost" onclick="gostep(1)">← Back</button><button class="btn btn-primary" onclick="gostep(3)">Continue →</button></div>
+    </div>
+
+    <div id="rs3" class="rpanel" style="display:none">
+      <h3>Upload Certifications</h3>
+      <p class="rsub">All certificates must be valid and issued by OCDA. Our team reviews within 2 business days.</p>
+      <div class="infobox">Required: Civil Defence Approval Certificate · Formats: PDF, JPG, PNG · Max 5 MB per file</div>
+      <div class="ubox"><div style="font-size:1.5rem">📄</div><p><strong>Civil Defence Approval Certificate</strong> — Required</p><span>Click to upload or drag &amp; drop</span></div>
+      <div class="ubox"><div style="font-size:1.5rem">📄</div><p><strong>Ministry of Commerce Registration</strong> — Required</p><span>Click to upload or drag &amp; drop</span></div>
+      <div class="ubox" style="opacity:.7"><div style="font-size:1.5rem">📎</div><p><strong>Additional Certifications</strong> — Optional (ISO, NFPA, etc.)</p><span>Click to upload or drag &amp; drop</span></div>
+      <div class="factions"><button class="btn btn-ghost" onclick="gostep(2)">← Back</button><button class="btn btn-primary" onclick="gostep(4)">Continue →</button></div>
+    </div>
+
+    <div id="rs4" class="rpanel" style="display:none">
+      <h3>Select Plan &amp; Pay</h3>
+      <p class="rsub">Your plan is determined by company size. You can upgrade at any time.</p>
+      <div class="size-opts">
+        <div class="sopt" id="sz-mic" onclick="selSize('mic',105)"><div class="so-name">Micro</div><div class="so-price">OMR 100</div><div class="so-emp">1–9 staff</div></div>
+        <div class="sopt" id="sz-sml" onclick="selSize('sml',262.5)"><div class="so-name">Small</div><div class="so-price">OMR 250</div><div class="so-emp">10–49 staff</div></div>
+        <div class="sopt sel" id="sz-med" onclick="selSize('med',472.5)"><div class="so-name">Medium</div><div class="so-price">OMR 450</div><div class="so-emp">50–199 staff</div></div>
+        <div class="sopt" id="sz-lrg" onclick="selSize('lrg',840)"><div class="so-name">Large</div><div class="so-price">OMR 800</div><div class="so-emp">200+ staff</div></div>
+      </div>
+      <div class="psum" id="psum">
+        <div class="psr"><span class="psl">Medium Company Plan</span><span class="psv">OMR 450.000</span></div>
+        <div class="psr"><span class="psl">VAT (5%)</span><span class="psv">OMR 22.500</span></div>
+        <div class="psr"><span>Total Due Today</span><span style="color:var(--red)">OMR 472.500</span></div>
+      </div>
+      <div style="margin-bottom:14px">
+        <div style="font-size:.77rem;font-weight:700;color:var(--soft);margin-bottom:8px;letter-spacing:.2px">PAYMENT METHOD</div>
+        <div style="background:var(--pearl);border:1.5px solid var(--border);border-radius:var(--r);padding:11px 14px;font-size:.84rem;color:var(--mist);margin-bottom:10px">💳 &nbsp; Card Number &nbsp;·&nbsp; **** **** **** ****</div>
+        <div class="frow">
+          <div style="background:var(--pearl);border:1.5px solid var(--border);border-radius:var(--r);padding:11px 14px;font-size:.84rem;color:var(--mist)">MM / YY</div>
+          <div style="background:var(--pearl);border:1.5px solid var(--border);border-radius:var(--r);padding:11px 14px;font-size:.84rem;color:var(--mist)">CVV</div>
+        </div>
+      </div>
+      <div class="factions"><button class="btn btn-ghost" onclick="gostep(3)">← Back</button><button class="btn btn-primary btn-lg" onclick="completereg()">Complete Registration &amp; Pay →</button></div>
+    </div>
+
+    <div id="rs-done" class="rpanel" style="display:none">
+      <div class="success-s">
+        <div class="sico">✅</div>
+        <h3>You're Registered!</h3>
+        <p>Welcome to Fire Protection Hub. Your payment is confirmed and your profile is live. Our compliance team will review your certificates within 2 business days.</p>
+        <button class="btn btn-primary btn-lg" onclick="navigate('dashboard')">Go to My Dashboard →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ DASHBOARD ════ -->
+<div class="page" id="page-dashboard">
+  <div class="dlayout">
+    <div class="dsb">
+      <div class="dsb-co">
+        <div class="dsb-av">AG</div>
+        <div class="dsb-name">Al-Aman Gulf Fire Safety</div>
+        <div class="dsb-plan">⭐ Medium Plan · Active</div>
+      </div>
+      <div class="dsb-nav">
+        <div class="dsb-sec">Main</div>
+        <div class="dsb-ni act" onclick="setdt(this)"><span class="ico">📊</span> Overview</div>
+        <div class="dsb-ni" onclick="setdt(this)"><span class="ico">📋</span> Tenders</div>
+        <div class="dsb-ni" onclick="setdt(this)"><span class="ico">📁</span> My Bids</div>
+        <div class="dsb-ni" onclick="setdt(this)"><span class="ico">🏗</span> Active Projects</div>
+        <div class="dsb-sec">Compliance</div>
+        <div class="dsb-ni" onclick="setdt(this)"><span class="ico">📑</span> Contracts</div>
+        <div class="dsb-ni" onclick="setdt(this)"><span class="ico">📝</span> JCR Reports</div>
+        <div class="dsb-ni" onclick="setdt(this)"><span class="ico">💳</span> Invoices</div>
+        <div class="dsb-ni" onclick="setdt(this)"><span class="ico">📂</span> Certificates</div>
+        <div class="dsb-ni" onclick="setdt(this)"><span class="ico">⏰</span> Inspections</div>
+        <div class="dsb-ni" onclick="setdt(this)">
+          <span class="ico">🔔</span> Notifications
+          <span class="nc">4</span>
+        </div>
+        <div class="dsb-sec">Account</div>
+        <div class="dsb-ni" onclick="setdt(this)"><span class="ico">📈</span> Analytics</div>
+        <div class="dsb-ni" onclick="setdt(this)"><span class="ico">⚙️</span> Settings</div>
+        <div class="dsb-ni" style="margin-top:16px;opacity:.6" onclick="navigate('home')"><span class="ico">←</span> Back to Platform</div>
+      </div>
+    </div>
+
+    <div class="dmain">
+      <div class="dtopbar">
+        <div><h2>Good morning, Mohammed</h2><div class="ddate">Monday, 23 March 2026 &nbsp;·&nbsp; Medium Plan &nbsp;·&nbsp; License expires in 28 days ⚠️</div></div>
+        <button class="btn btn-primary btn-sm" onclick="navigate('tenders')">Browse Tenders</button>
+      </div>
+
+      <div class="pending-banner">⏳ <strong>Pending Verification:</strong> Your uploaded certificates are under review. Full tender access will be granted within 2 business days.</div>
+
+      <div class="kgrid">
+        <div class="kc"><div class="kico ki-n">📋</div><div class="kv">7</div><div class="kl">Active Bids</div><div class="kch kup">↑ 2 this week</div></div>
+        <div class="kc"><div class="kico ki-r">🏆</div><div class="kv">14</div><div class="kl">Won Contracts</div><div class="kch kup">↑ 3 this month</div></div>
+        <div class="kc"><div class="kico ki-a">⏰</div><div class="kv" style="color:var(--amber)">3</div><div class="kl">Inspections Due</div><div class="kch kwarn">Next in 2 days</div></div>
+        <div class="kc"><div class="kico ki-g">💳</div><div class="kv">OMR 26K</div><div class="kl">Pending Invoices</div><div class="kch kwarn">2 awaiting approval</div></div>
+      </div>
+
+      <div class="dr3">
+        <div class="wg">
+          <div class="wt">Active Tenders &amp; Bids <span class="wa" onclick="navigate('tenders')">View All →</span></div>
+          <div class="trow"><div><div class="trn">Commercial Tower — Al Mouj (24F)</div><div class="trb">OMR 85,000 · Closes 28 Mar</div></div><span class="sp sp-active">Bid Submitted</span></div>
+          <div class="trow"><div><div class="trn">Hotel AMC — Salalah</div><div class="trb">OMR 12,500/yr · Closes 3 Apr</div></div><span class="sp sp-review">Under Review</span></div>
+          <div class="trow"><div><div class="trn">Mawaleh Compound</div><div class="trb">OMR 44,000 · Closes 15 Apr</div></div><span class="sp sp-active">Awarded ✓</span></div>
+          <div class="trow"><div><div class="trn">Sohar Warehouse Upgrade</div><div class="trb">OMR 22,000 · Closes 10 Apr</div></div><span class="sp sp-pending">Open</span></div>
+        </div>
+        <div class="wg">
+          <div class="wt">Inspection Schedule</div>
+          <div class="irow"><div class="idot idr"></div><div><div class="in-name">Al Mouj Office Tower</div><div class="in-date">⚠ Due in 2 days — 23 Mar</div></div></div>
+          <div class="irow"><div class="idot ida"></div><div><div class="in-name">Muscat Hills Compound</div><div class="in-date">Due 4 Apr 2026</div></div></div>
+          <div class="irow"><div class="idot idg"></div><div><div class="in-name">Seeb Mall Extension</div><div class="in-date">Due 2 May 2026</div></div></div>
+        </div>
+      </div>
+
+      <div class="drow">
+        <div class="wg">
+          <div class="wt">Notifications <span class="wa">Mark All Read</span></div>
+          <div class="nrow"><div class="nibo ni-r">🔴</div><div><div class="nmsg"><strong>License Expiring:</strong> Civil Defence certificate expires in <strong style="color:var(--red)">28 days</strong>. Upload renewal to stay listed.</div><div class="ntime">Today · License Alert</div></div></div>
+          <div class="nrow"><div class="nibo ni-a">⏰</div><div><div class="nmsg"><strong>Inspection Due:</strong> Al Mouj Tower 6-month inspection due in 2 days. Coordinate with Al Raed Contracting.</div><div class="ntime">Yesterday · Inspection Reminder</div></div></div>
+          <div class="nrow"><div class="nibo ni-b">📝</div><div><div class="nmsg"><strong>JCR Awaiting Signature:</strong> Mawaleh Compound JCR pending owner signature since 18 Mar.</div><div class="ntime">3 days ago · JCR</div></div></div>
+          <div class="nrow"><div class="nibo ni-g">💳</div><div><div class="nmsg"><strong>Invoice Approved:</strong> INV #0418 for Salalah Hotel AMC (OMR 3,125) approved and paid.</div><div class="ntime">5 days ago · Invoice</div></div></div>
+        </div>
+        <div class="wg">
+          <div class="wt">Certificates <span class="wa">Upload New →</span></div>
+          <div class="cert-row"><div class="crib">📜</div><div style="flex:1"><div class="cr-cn">Civil Defence Approval</div><div class="cr-ce">Expires: 18 Apr 2026</div></div><span class="sp sp-expired">Expiring Soon</span></div>
+          <div class="cert-row"><div class="crib">📜</div><div style="flex:1"><div class="cr-cn">Ministry of Commerce Reg.</div><div class="cr-ce">Expires: 31 Dec 2026</div></div><span class="sp sp-active">Valid</span></div>
+          <div class="cert-row"><div class="crib">📜</div><div style="flex:1"><div class="cr-cn">NFPA Compliance Cert.</div><div class="cr-ce">Expires: 1 Sep 2026</div></div><span class="sp sp-active">Valid</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="ft" id="ft">
+  <div class="ft-main">
+    <div class="ft-brand">
+      <div class="logo" onclick="navigate('home')"><div class="logo-mark" style="width:34px;height:38px"></div><div><div class="logo-title" style="color:#fff">Fire Protection Hub</div><div class="logo-sub" style="color:rgba(255,255,255,.35)">National Fire Safety Platform</div></div></div>
+      <p>A government-supervised national platform for fire safety management in the Sultanate of Oman. Under OCDA oversight.</p>
+    </div>
+    <div><h5>Platform</h5><ul class="ftl"><li><a href="#" onclick="navigate('companies')">Certified Companies</a></li><li><a href="#" onclick="navigate('tenders')">Tenders</a></li><li><a href="#" onclick="navigate('contracts')">Contracts</a></li><li><a href="#" onclick="navigate('jcr')">JCR Reports</a></li><li><a href="#" onclick="navigate('invoices')">Invoices</a></li></ul></div>
+    <div><h5>Resources</h5><ul class="ftl"><li><a href="#">OCDA Standards</a></li><li><a href="#">Certification Guide</a></li><li><a href="#">Inspection Checklist</a></li><li><a href="#">Help &amp; FAQ</a></li></ul></div>
+    <div><h5>Institution</h5><ul class="ftl"><li><a href="#">About</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li></ul></div>
+  </div>
+  <div class="ft-bot"><p>© 2026 Fire Protection Hub — Sultanate of Oman</p><p>Supervised by Oman Civil Defence &amp; Ambulance Authority</p></div>
+</footer>
+
+<script>
+function navigate(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const t=document.getElementById('page-'+id);
+  if(t){t.classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+  document.querySelectorAll('.ni').forEach(n=>n.classList.toggle('active',n.dataset.page===id));
+  const isDash=id==='dashboard';
+  document.getElementById('hdr-acts').innerHTML=isDash
+    ?'<span style="font-size:.8rem;color:var(--soft)">Mohammed Al Balushi</span><button class="btn btn-ghost btn-sm" onclick="navigate(\'home\')">Log Out</button>'
+    :'<button class="btn btn-ghost" onclick="navigate(\'register\')">Log In</button><button class="btn btn-primary" onclick="navigate(\'register\')">Register</button>';
+  const ft=document.getElementById('ft');
+  if(ft)ft.style.display=isDash?'none':'block';
+}
+let cstep=1;
+function gostep(s){
+  document.querySelectorAll('[id^="rs"]').forEach(e=>{if(/^rs\d$/.test(e.id))e.style.display='none'});
+  document.getElementById('rs-done').style.display='none';
+  const el=document.getElementById('rs'+s);
+  if(el)el.style.display='block';
+  cstep=s;
+  for(let i=1;i<=4;i++){
+    const n=document.getElementById('sn'+i),l=document.getElementById('sl'+i);
+    if(!n)continue;
+    if(i<s){n.className='rsn done';n.textContent='✓';l.className='rsl done'}
+    else if(i===s){n.className='rsn act';n.textContent=i;l.className='rsl act'}
+    else{n.className='rsn pend';n.textContent=i;l.className='rsl pend'}
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function completereg(){
+  document.querySelectorAll('[id^="rs"]').forEach(e=>{if(/^rs\d$/.test(e.id))e.style.display='none'});
+  for(let i=1;i<=4;i++){
+    const n=document.getElementById('sn'+i),l=document.getElementById('sl'+i);
+    if(n){n.className='rsn done';n.textContent='✓'}
+    if(l)l.className='rsl done';
+  }
+  document.getElementById('rs-done').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function selType(t){
+  ['co','ow'].forEach(x=>document.getElementById('to-'+x).classList.remove('sel'));
+  document.getElementById('to-'+t).classList.add('sel');
+}
+function selSize(s,total){
+  ['mic','sml','med','lrg'].forEach(x=>document.getElementById('sz-'+x).classList.remove('sel'));
+  document.getElementById('sz-'+s).classList.add('sel');
+}
+function setdt(el){
+  document.querySelectorAll('.dsb-ni').forEach(i=>i.classList.remove('act'));
+  el.classList.add('act');
+}
+document.querySelectorAll('.fchip').forEach(c=>{
+  c.addEventListener('click',function(){
+    const p=this.closest('.fin');
+    p.querySelectorAll('.fchip').forEach(x=>x.classList.remove('on'));
+    this.classList.add('on');
+  });
+});
+navigate('home');
+</script>
+</body>
+</html>
